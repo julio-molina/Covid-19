@@ -1,4 +1,8 @@
-# Covid-19
+# Covid-19 Case Predictor
+## Project Goals
+Implement a machine learning algorithm to predict daily death rate and other relevant statistics caused by the COVID-19 outbreak. I would like to begin in the U.S.A. region, focusing on statistics in each state as well as the country. Additionally, I would like to begin focusing on deaths per day. I currently am currently considering implementing the perceptron algorithm, linear regression, reinforcement learning(although it is semi-supervised) and/or the Kernel methods. The algorithm to be used or developed is currently TBD.
+
+## Tenative Schedule 
 Week | Focus | Description
 -----|-------|------------
 0 -- 9/7 - 9/13|Data Preparation|"Focus on understanding and working with the raw data. Potentially cleansing and extracting data as well. Finalize data to be used in CSV file format. Determine what scripts may be needed as well as what type of scripts (i.e. python, bash). Consider any API’s that may need to be used or created."
@@ -13,7 +17,7 @@ Week | Focus | Description
 9-- 11/9 - 11/15|Check-in on Project Proposal. qqqAutomation|"Take action where needed to ensure all goals mentioned in project proposal are met. Begin to create a script(s) that can manage ML project independently. Producing daily predictions about COVID-19 statistics. Demonstrate ML algorithms past predictions with the target data. "
 10-- 11/16 - 11/22|Construct a Report exhibiting project, goals, challenges and what I was able to learn.|Use professional software such as Tableau to add powerful illustrations for Report’s main discussion points and examples. 
 11 -- 11/23 – 11/29-- Thanksgiving Break| Report (countinued) & Wrap-up |"Make final changes on ML algorithm. Ensure total compatibility of scripts with final implementation of each aspect of the project."
-12-- 11/30 – 12/6|Last commit on GitHub for all coding related aspects. (continued)|"All scripts must be done by 12/6.Consider packaging the project in a python package executable assuming no necessary bash scripting was used."
+12-- 11/30 – 12/6|Last commit on GitHub for all coding related aspects. (continued)|"All scripts must be done by 12/6. Consider packaging the project in a python package executable assuming no necessary bash scripting was used."
 13-- 12/7 – 12/13|Final Report Edit|Paper has returned by reviewers at least once by 12/7.
 14-- 12/14 – 12/14-- Last Week of Classes||
 
