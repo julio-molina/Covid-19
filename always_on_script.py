@@ -5,8 +5,7 @@
 #using a linux based system, with "jupyter lab" and anaconda installed which includes many
 #data science oriented python libaries. Python 3.8
 
-#TODO: ATM the script is able to run everything atleast once, and not countious as it will
-#be implemented later in its lifespan.
+#TODO: fix first case in if, else, elif statement, in main
 from time import strftime, sleep, gmtime#UTC time +4EST
 import urllib.request
 import subprocess
@@ -37,22 +36,30 @@ def runjupyter():
     #command = ['perl', '-e', "'alarm shift @ARGV; exec @ARGV'", "200"]
     exec_proc = subprocess.call("perl -e 'alarm shift @ARGV; exec @ARGV' 21600 jupyter lab ~/projects/dir/models.ipynb", shell=True)# 6 hours
 
-
 def getFilestats():
-    print("set to do nothing:")
+    output=subprocess.Popen(["ls", "-la", "us.csv"],stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    stdout,stderr = output.communicate()
+    encoding = 'utf-8'
+    stdout=stdout.decode(encoding)
+    stdout = stdout[30:36]
+    return stdout
 
 
 def main():
     subprocess.call("cd ~/projects/dir/", shell=True)
-    currentTime=strftime( "%H:%M",gmtime())#UTC time +4 EST
     while(True):
-        if (True):#("10:00"):#utctime +4 EST
-            print("worked, do something ")
+        stdout=getFilestats()
+        todaysDate=strftime("%b %d", gmtime())
+        currentTime=strftime( "%H:%M",gmtime())#UTC time +4 EST
+        if (currentTime=="10:00"):#6AM #currently almost impossible to get first case to work.
+            gitDownloader();
+            runjupyter();
+        elif (stdout==todaysDate):#("10:00"):#utctime +4 EST
+            print("Downloading data")
             gitDownloader();
             runjupyter();
         else:
-            print("Nothin")
-            sleep(60)
-            #main();
+            print("No new data")
+            runjupyter()
 
 main();
